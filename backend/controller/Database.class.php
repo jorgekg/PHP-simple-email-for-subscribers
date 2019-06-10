@@ -7,9 +7,10 @@ class DatabaseController {
   public function get_instance() {
     if (empty($this->instance)) {
       $this->instance =
-        new PDO('mysql:host=localhost;dbname=simple_email_subscribe', 'root', 'faccao12');
+        new PDO('mysql:unix_socket=/tmp/mysql.sock;dbname=simple_email_subscribe', 'jorge', 'teste');
       $this->instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
+    return $this->instance;
   }
 
 }
