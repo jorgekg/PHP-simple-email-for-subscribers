@@ -13,7 +13,7 @@ $video = !empty($_FILES['video']) ? $_FILES['video'] : null;
 try {
   $publish = new PublishController($title, $description, $video);
   $id = $publish->insert();
-  header("location: ../../pages/videos/?id={$id}");
+  header("location: ../../pages/publish/email.php?id={$id}");
 } catch (Exception $e) {
   http_response_code(500);
   echo 'Ocorreu um erro interno';

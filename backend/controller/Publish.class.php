@@ -21,7 +21,7 @@ class PublishController {
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }
 
-  public function getAll($id) {
+  public function getAll() {
     $conn = new DatabaseController();
     $instance = $conn->get_instance();
     $stmt = $instance->query("select * from publish");
